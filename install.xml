@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin name="mglivefyre">
+	<title>mgLiveFyre</title>
+	<summary>This mod allows you to integrate LiveFyre.com comments on your website powered by Subrion CMS.</summary>
+	<author>ModsGuru</author>
+	<contributor>ModsGuru</contributor>
+	<version>3.0.1</version>
+	<date>2014-10-27</date>
+	<compatibility>3.0</compatibility>
+
+	<config group="miscellaneous" name="mglivefyre_plugin" type="divider" value="mgLiveFyre"><![CDATA[ mgLiveFyre ]]></config>
+	<config group="miscellaneous" name="mglivefyre_siteid" type="text" description="LiveFyre Site ID">input your site id here</config>
+
+	<blocks>
+		<block title="LiveFyre Comments" name="mglivefyre_block" showheader="0" position="bottom" type="smarty">
+			<![CDATA[
+<script type="text/javascript" src="http://livefyre.com/wjs/javascripts/livefyre.js"></script>
+
+<script type="text/javascript">
+	var fyre = LF(
+	{
+		site_id: {$core.config.mglivefyre_siteid},
+		version: '1.0'
+	} );
+</script>
+			]]>
+		</block>
+	</blocks>
+</plugin>
